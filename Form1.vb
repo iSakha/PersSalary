@@ -85,4 +85,8 @@ Public Class mainForm
         daysQty_txt.Text = CInt(daysQty.Days.ToString()) + 1
         daysQty_lbl.Text = daysQty_txt.Text
     End Sub
+
+    Private Sub eventList_cmb_SelectedIndexChanged(sender As Object, e As EventArgs) Handles eventList_cmb.SelectedIndexChanged
+        fillFormWithSelectedEvent()
+    End Sub
 End Class
