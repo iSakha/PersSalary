@@ -52,6 +52,18 @@
 
     Sub fillFormWithSelectedEvent()
 
+        mainForm.event_txt.Text = eventCollection.Item(mainForm.eventList_cmb.SelectedIndex + 1).Name
+        mainForm.location_txt.Text = eventCollection.Item(mainForm.eventList_cmb.SelectedIndex + 1).Location
+        mainForm.manager_txt.Text = eventCollection.Item(mainForm.eventList_cmb.SelectedIndex + 1).Manager
+        mainForm.eventNumber_txt.Text = eventCollection.Item(mainForm.eventList_cmb.SelectedIndex + 1).Number
+        'mainForm.startDTP.Value = CDate(eventCollection.Item(mainForm.eventList_cmb.SelectedIndex + 1).StartDate)
+        'mainForm.startDTP.
+        'mainForm.startDTP.Text = eventCollection.Item(mainForm.eventList_cmb.SelectedIndex + 1).StartDate
+        'mainForm.eventDTP.Text = eventCollection.Item(mainForm.eventList_cmb.SelectedIndex + 1).EventDate
+        'mainForm.endDTP.Text = eventCollection.Item(mainForm.eventList_cmb.SelectedIndex + 1).EndDate
+        mainForm.daysQty_txt.Text = eventCollection.Item(mainForm.eventList_cmb.SelectedIndex + 1).DaysQty
+        mainForm.persQty_txt.Text = eventCollection.Item(mainForm.eventList_cmb.SelectedIndex + 1).PersQty
+
     End Sub
 
 End Module
