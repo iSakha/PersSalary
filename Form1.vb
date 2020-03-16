@@ -14,8 +14,7 @@ Public Class mainForm
     '--------------------------------------------------------------------------------------------------
     Private Sub eventOK_btn_Click(sender As Object, e As EventArgs) Handles eventOK_btn.Click
 
-        Dim startDate, endDate As Date
-        Dim daysQty As TimeSpan
+
 
         '   Path to application folder
         sPath = Application.StartupPath
@@ -40,19 +39,7 @@ Public Class mainForm
 
         ' Write textbox values to labels
 
-        event_lbl.Text = event_txt.Text
-        location_lbl.Text = location_txt.Text
-        manager_lbl.Text = manager_txt.Text
-        eventNumber_lbl.Text = eventNumber_txt.Text
-
-        startDate = startDTP.Value
-        endDate = endDTP.Value
-        daysQty = endDate.Subtract(startDate)
-        startDate_lbl.Text = startDTP.Text
-        eventDate_lbl.Text = eventDTP.Text
-        endDate_lbl.Text = endDTP.Text
-        daysQty_txt.Text = CInt(daysQty.Days.ToString()) + 1
-        daysQty_lbl.Text = daysQty_txt.Text
+        writeDataToLabels()
 
         Dim currentEvent As New Events
 
@@ -88,5 +75,10 @@ Public Class mainForm
 
     Private Sub eventList_cmb_SelectedIndexChanged(sender As Object, e As EventArgs) Handles eventList_cmb.SelectedIndexChanged
         fillFormWithSelectedEvent()
+        writeDataToLabels()
+    End Sub
+
+    Private Sub newEvent_btn_Click(sender As Object, e As EventArgs) Handles newEvent_btn.Click
+        clearMainForm()
     End Sub
 End Class

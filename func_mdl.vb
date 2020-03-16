@@ -51,18 +51,69 @@
     End Sub
 
     Sub fillFormWithSelectedEvent()
+        Dim sDate As String
 
         mainForm.event_txt.Text = eventCollection.Item(mainForm.eventList_cmb.SelectedIndex + 1).Name
         mainForm.location_txt.Text = eventCollection.Item(mainForm.eventList_cmb.SelectedIndex + 1).Location
         mainForm.manager_txt.Text = eventCollection.Item(mainForm.eventList_cmb.SelectedIndex + 1).Manager
         mainForm.eventNumber_txt.Text = eventCollection.Item(mainForm.eventList_cmb.SelectedIndex + 1).Number
-        'mainForm.startDTP.Value = CDate(eventCollection.Item(mainForm.eventList_cmb.SelectedIndex + 1).StartDate)
-        'mainForm.startDTP.
-        'mainForm.startDTP.Text = eventCollection.Item(mainForm.eventList_cmb.SelectedIndex + 1).StartDate
-        'mainForm.eventDTP.Text = eventCollection.Item(mainForm.eventList_cmb.SelectedIndex + 1).EventDate
-        'mainForm.endDTP.Text = eventCollection.Item(mainForm.eventList_cmb.SelectedIndex + 1).EndDate
+        sDate = eventCollection.Item(mainForm.eventList_cmb.SelectedIndex + 1).StartDate
+        sDate = convertToSysDate(sDate)
+        mainForm.startDTP.Value = sDate
+        sDate = eventCollection.Item(mainForm.eventList_cmb.SelectedIndex + 1).EventDate
+        sDate = convertToSysDate(sDate)
+        mainForm.eventDTP.Value = sDate
+        sDate = eventCollection.Item(mainForm.eventList_cmb.SelectedIndex + 1).EndDate
+        sDate = convertToSysDate(sDate)
+        mainForm.endDTP.Value = sDate
         mainForm.daysQty_txt.Text = eventCollection.Item(mainForm.eventList_cmb.SelectedIndex + 1).DaysQty
         mainForm.persQty_txt.Text = eventCollection.Item(mainForm.eventList_cmb.SelectedIndex + 1).PersQty
+
+    End Sub
+
+
+    Function convertToSysDate(str) As String
+
+        Dim arr() As String
+
+        arr = Split(str, ".", 3)
+
+        convertToSysDate = arr(1) & "/" & arr(0) & "/" & arr(2)
+
+    End Function
+
+    Sub clearMainForm()
+
+        mainForm.event_txt.Text = ""
+        mainForm.location_txt.Text = ""
+        mainForm.manager_txt.Text = ""
+        mainForm.eventNumber_txt.Text = ""
+        mainForm.startDTP.Value = Now()
+        mainForm.eventDTP.Value = Now()
+        mainForm.endDTP.Value = Now()
+        mainForm.daysQty_txt.Text = ""
+        mainForm.persQty_txt.Text = ""
+
+    End Sub
+
+    Sub writeDataToLabels()
+
+        Dim startDate, endDate As Date
+        Dim daysQty As TimeSpan
+
+        mainForm.event_lbl.Text = mainForm.event_txt.Text
+        mainForm.location_lbl.Text = mainForm.location_txt.Text
+        mainForm.manager_lbl.Text = mainForm.manager_txt.Text
+        mainForm.eventNumber_lbl.Text = mainForm.eventNumber_txt.Text
+
+        startDate = mainForm.startDTP.Value
+        endDate = mainForm.endDTP.Value
+        daysQty = endDate.Subtract(startDate)
+        mainForm.startDate_lbl.Text = mainForm.startDTP.Text
+        mainForm.eventDate_lbl.Text = mainForm.eventDTP.Text
+        mainForm.endDate_lbl.Text = mainForm.endDTP.Text
+        mainForm.daysQty_txt.Text = CInt(daysQty.Days.ToString()) + 1
+        mainForm.daysQty_lbl.Text = mainForm.daysQty_txt.Text
 
     End Sub
 
