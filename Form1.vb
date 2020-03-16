@@ -82,6 +82,24 @@ Public Class mainForm
     End Sub
 
     Private Sub addPers_btn_Click(sender As Object, e As EventArgs) Handles addPers_btn.Click
-        MsgBox(ListBox1.SelectedItem)
+        For Each it As String In ListBox1.SelectedItems
+            'MsgBox(it)
+            addPers(it)
+        Next
+        ' remove selected items
+        Do While (ListBox1.SelectedItems.Count > 0)
+            ListBox1.Items.Remove(ListBox1.SelectedItem)
+        Loop
+    End Sub
+
+    Private Sub subtractPers_btn_Click(sender As Object, e As EventArgs) Handles subtractPers_btn.Click
+        For Each it As String In ListBox2.SelectedItems
+            'MsgBox(it)
+            subtractPers(it)
+        Next
+        ' remove selected items
+        Do While (ListBox2.SelectedItems.Count > 0)
+            ListBox2.Items.Remove(ListBox2.SelectedItem)
+        Loop
     End Sub
 End Class

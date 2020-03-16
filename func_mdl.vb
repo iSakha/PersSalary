@@ -125,4 +125,12 @@
         Next i
     End Sub
 
+    Sub addPers(_pers)
+        mainForm.ListBox2.Items.Add(_pers)
+    End Sub
+
+    Sub subtractPers(_pers)
+        mainForm.ListBox1.Items.Add(_pers)
+    End Sub
+
 End Module

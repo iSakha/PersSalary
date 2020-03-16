@@ -24,6 +24,7 @@ Partial Class mainForm
     Private Sub InitializeComponent()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.next1_btn = New System.Windows.Forms.Button()
         Me.eventList_cmb = New System.Windows.Forms.ComboBox()
         Me.loadEvent_btn = New System.Windows.Forms.Button()
         Me.newEvent_btn = New System.Windows.Forms.Button()
@@ -47,6 +48,11 @@ Partial Class mainForm
         Me.Label19 = New System.Windows.Forms.Label()
         Me.Label20 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.subtractPers_btn = New System.Windows.Forms.Button()
+        Me.addPers_btn = New System.Windows.Forms.Button()
+        Me.ListBox2 = New System.Windows.Forms.ListBox()
+        Me.ListBox1 = New System.Windows.Forms.ListBox()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.eventNumber_lbl = New System.Windows.Forms.Label()
@@ -66,12 +72,6 @@ Partial Class mainForm
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.ListBox1 = New System.Windows.Forms.ListBox()
-        Me.ListBox2 = New System.Windows.Forms.ListBox()
-        Me.next1_btn = New System.Windows.Forms.Button()
-        Me.addPers_btn = New System.Windows.Forms.Button()
-        Me.subtractPers_btn = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -122,6 +122,15 @@ Partial Class mainForm
         Me.TabPage1.Size = New System.Drawing.Size(708, 626)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Мероприятие"
+        '
+        'next1_btn
+        '
+        Me.next1_btn.Location = New System.Drawing.Point(473, 519)
+        Me.next1_btn.Name = "next1_btn"
+        Me.next1_btn.Size = New System.Drawing.Size(156, 42)
+        Me.next1_btn.TabIndex = 26
+        Me.next1_btn.Text = "NEXT"
+        Me.next1_btn.UseVisualStyleBackColor = True
         '
         'eventList_cmb
         '
@@ -325,6 +334,53 @@ Partial Class mainForm
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Персонал"
         Me.TabPage2.UseVisualStyleBackColor = True
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(219, 561)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(156, 42)
+        Me.Button1.TabIndex = 27
+        Me.Button1.Text = "NEXT"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'subtractPers_btn
+        '
+        Me.subtractPers_btn.Location = New System.Drawing.Point(259, 308)
+        Me.subtractPers_btn.Name = "subtractPers_btn"
+        Me.subtractPers_btn.Size = New System.Drawing.Size(75, 23)
+        Me.subtractPers_btn.TabIndex = 3
+        Me.subtractPers_btn.Text = "<<<"
+        Me.subtractPers_btn.UseVisualStyleBackColor = True
+        '
+        'addPers_btn
+        '
+        Me.addPers_btn.Location = New System.Drawing.Point(259, 261)
+        Me.addPers_btn.Name = "addPers_btn"
+        Me.addPers_btn.Size = New System.Drawing.Size(75, 23)
+        Me.addPers_btn.TabIndex = 2
+        Me.addPers_btn.Text = ">>>"
+        Me.addPers_btn.UseVisualStyleBackColor = True
+        '
+        'ListBox2
+        '
+        Me.ListBox2.FormattingEnabled = True
+        Me.ListBox2.Location = New System.Drawing.Point(376, 14)
+        Me.ListBox2.Name = "ListBox2"
+        Me.ListBox2.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple
+        Me.ListBox2.Size = New System.Drawing.Size(199, 589)
+        Me.ListBox2.Sorted = True
+        Me.ListBox2.TabIndex = 1
+        '
+        'ListBox1
+        '
+        Me.ListBox1.FormattingEnabled = True
+        Me.ListBox1.Location = New System.Drawing.Point(19, 14)
+        Me.ListBox1.Name = "ListBox1"
+        Me.ListBox1.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple
+        Me.ListBox1.Size = New System.Drawing.Size(199, 589)
+        Me.ListBox1.Sorted = True
+        Me.ListBox1.TabIndex = 0
         '
         'TabPage3
         '
@@ -537,59 +593,6 @@ Partial Class mainForm
         Me.Label5.Size = New System.Drawing.Size(92, 13)
         Me.Label5.TabIndex = 0
         Me.Label5.Text = "Начало монтажа"
-        '
-        'ListBox1
-        '
-        Me.ListBox1.FormattingEnabled = True
-        Me.ListBox1.Location = New System.Drawing.Point(19, 14)
-        Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple
-        Me.ListBox1.Size = New System.Drawing.Size(199, 589)
-        Me.ListBox1.TabIndex = 0
-        '
-        'ListBox2
-        '
-        Me.ListBox2.FormattingEnabled = True
-        Me.ListBox2.Location = New System.Drawing.Point(376, 14)
-        Me.ListBox2.Name = "ListBox2"
-        Me.ListBox2.Size = New System.Drawing.Size(199, 589)
-        Me.ListBox2.TabIndex = 1
-        '
-        'next1_btn
-        '
-        Me.next1_btn.Location = New System.Drawing.Point(473, 519)
-        Me.next1_btn.Name = "next1_btn"
-        Me.next1_btn.Size = New System.Drawing.Size(156, 42)
-        Me.next1_btn.TabIndex = 26
-        Me.next1_btn.Text = "NEXT"
-        Me.next1_btn.UseVisualStyleBackColor = True
-        '
-        'addPers_btn
-        '
-        Me.addPers_btn.Location = New System.Drawing.Point(259, 261)
-        Me.addPers_btn.Name = "addPers_btn"
-        Me.addPers_btn.Size = New System.Drawing.Size(75, 23)
-        Me.addPers_btn.TabIndex = 2
-        Me.addPers_btn.Text = ">>>"
-        Me.addPers_btn.UseVisualStyleBackColor = True
-        '
-        'subtractPers_btn
-        '
-        Me.subtractPers_btn.Location = New System.Drawing.Point(259, 308)
-        Me.subtractPers_btn.Name = "subtractPers_btn"
-        Me.subtractPers_btn.Size = New System.Drawing.Size(75, 23)
-        Me.subtractPers_btn.TabIndex = 3
-        Me.subtractPers_btn.Text = "<<<"
-        Me.subtractPers_btn.UseVisualStyleBackColor = True
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(219, 561)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(156, 42)
-        Me.Button1.TabIndex = 27
-        Me.Button1.Text = "NEXT"
-        Me.Button1.UseVisualStyleBackColor = True
         '
         'mainForm
         '
