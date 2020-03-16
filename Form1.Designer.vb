@@ -66,8 +66,15 @@ Partial Class mainForm
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.ListBox1 = New System.Windows.Forms.ListBox()
+        Me.ListBox2 = New System.Windows.Forms.ListBox()
+        Me.next1_btn = New System.Windows.Forms.Button()
+        Me.addPers_btn = New System.Windows.Forms.Button()
+        Me.subtractPers_btn = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
+        Me.TabPage2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
@@ -86,6 +93,7 @@ Partial Class mainForm
         'TabPage1
         '
         Me.TabPage1.BackColor = System.Drawing.Color.Linen
+        Me.TabPage1.Controls.Add(Me.next1_btn)
         Me.TabPage1.Controls.Add(Me.eventList_cmb)
         Me.TabPage1.Controls.Add(Me.loadEvent_btn)
         Me.TabPage1.Controls.Add(Me.newEvent_btn)
@@ -305,6 +313,11 @@ Partial Class mainForm
         '
         'TabPage2
         '
+        Me.TabPage2.Controls.Add(Me.Button1)
+        Me.TabPage2.Controls.Add(Me.subtractPers_btn)
+        Me.TabPage2.Controls.Add(Me.addPers_btn)
+        Me.TabPage2.Controls.Add(Me.ListBox2)
+        Me.TabPage2.Controls.Add(Me.ListBox1)
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
@@ -525,6 +538,59 @@ Partial Class mainForm
         Me.Label5.TabIndex = 0
         Me.Label5.Text = "Начало монтажа"
         '
+        'ListBox1
+        '
+        Me.ListBox1.FormattingEnabled = True
+        Me.ListBox1.Location = New System.Drawing.Point(19, 14)
+        Me.ListBox1.Name = "ListBox1"
+        Me.ListBox1.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple
+        Me.ListBox1.Size = New System.Drawing.Size(199, 589)
+        Me.ListBox1.TabIndex = 0
+        '
+        'ListBox2
+        '
+        Me.ListBox2.FormattingEnabled = True
+        Me.ListBox2.Location = New System.Drawing.Point(376, 14)
+        Me.ListBox2.Name = "ListBox2"
+        Me.ListBox2.Size = New System.Drawing.Size(199, 589)
+        Me.ListBox2.TabIndex = 1
+        '
+        'next1_btn
+        '
+        Me.next1_btn.Location = New System.Drawing.Point(473, 519)
+        Me.next1_btn.Name = "next1_btn"
+        Me.next1_btn.Size = New System.Drawing.Size(156, 42)
+        Me.next1_btn.TabIndex = 26
+        Me.next1_btn.Text = "NEXT"
+        Me.next1_btn.UseVisualStyleBackColor = True
+        '
+        'addPers_btn
+        '
+        Me.addPers_btn.Location = New System.Drawing.Point(259, 261)
+        Me.addPers_btn.Name = "addPers_btn"
+        Me.addPers_btn.Size = New System.Drawing.Size(75, 23)
+        Me.addPers_btn.TabIndex = 2
+        Me.addPers_btn.Text = ">>>"
+        Me.addPers_btn.UseVisualStyleBackColor = True
+        '
+        'subtractPers_btn
+        '
+        Me.subtractPers_btn.Location = New System.Drawing.Point(259, 308)
+        Me.subtractPers_btn.Name = "subtractPers_btn"
+        Me.subtractPers_btn.Size = New System.Drawing.Size(75, 23)
+        Me.subtractPers_btn.TabIndex = 3
+        Me.subtractPers_btn.Text = "<<<"
+        Me.subtractPers_btn.UseVisualStyleBackColor = True
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(219, 561)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(156, 42)
+        Me.Button1.TabIndex = 27
+        Me.Button1.Text = "NEXT"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'mainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -538,6 +604,7 @@ Partial Class mainForm
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
+        Me.TabPage2.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
@@ -590,4 +657,10 @@ Partial Class mainForm
     Friend WithEvents eventList_cmb As ComboBox
     Friend WithEvents loadEvent_btn As Button
     Friend WithEvents newEvent_btn As Button
+    Friend WithEvents ListBox2 As ListBox
+    Friend WithEvents ListBox1 As ListBox
+    Friend WithEvents next1_btn As Button
+    Friend WithEvents Button1 As Button
+    Friend WithEvents subtractPers_btn As Button
+    Friend WithEvents addPers_btn As Button
 End Class

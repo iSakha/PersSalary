@@ -14,39 +14,19 @@ Public Class mainForm
     '--------------------------------------------------------------------------------------------------
     Private Sub eventOK_btn_Click(sender As Object, e As EventArgs) Handles eventOK_btn.Click
 
-
-
-        '   Path to application folder
-        sPath = Application.StartupPath
-
-        ' Start Excel and get Application object.
-        appXL = CreateObject("Excel.Application")
-        'appXL.Visible = True
-        Try
-            wbXl = appXL.Workbooks.Open(sPath & "\Salary.xlsx")
-        Catch
-            'MsgBox("File is already open")
-            appXL.Quit()
-            appXL = Nothing
-            'For Each wb As Excel.Workbook In appXL.Workbooks
-            '    If wb.Name = "Salary.xlsx" Then
-            '        wbXl = wb
-            '    End If
-            'Next wb
-            wbXl = appXL.Workbooks("Salary.xlsx")
-
-        End Try
-
         ' Write textbox values to labels
-
         writeDataToLabels()
 
         Dim currentEvent As New Events
 
         tblXl = wbXl.Sheets("Service").ListObjects("Events")
         currentEvent.ID = tblXl.DataBodyRange.Rows.Count
+        currentEvent.SheetName = "event_" & currentEvent.ID
 
         currentEvent.writeToExcel(wbXl)
+        eventCollection.Add(currentEvent)
+        eventList_cmb.Items.Add(currentEvent.Name)
+
         appXL.DisplayAlerts = False
         wbXl.Close(SaveChanges:=True)
         appXL.Quit()
@@ -80,5 +60,28 @@ Public Class mainForm
 
     Private Sub newEvent_btn_Click(sender As Object, e As EventArgs) Handles newEvent_btn.Click
         clearMainForm()
+    End Sub
+
+    Private Sub daysQty_txt_TextChanged(sender As Object, e As EventArgs) Handles daysQty_txt.TextChanged
+        If CInt(daysQty_txt.Text) <= 0 Then
+            daysQty_txt.BackColor = Color.Red
+        Else
+            daysQty_txt.BackColor = Color.White
+        End If
+    End Sub
+
+    Private Sub mainForm_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        appXL.DisplayAlerts = False
+        wbXl.Close(SaveChanges:=True)
+        appXL.Quit()
+        appXL = Nothing
+    End Sub
+
+    Private Sub next1_btn_Click(sender As Object, e As EventArgs) Handles next1_btn.Click
+        populateListBoxFromExcel()
+    End Sub
+
+    Private Sub addPers_btn_Click(sender As Object, e As EventArgs) Handles addPers_btn.Click
+        MsgBox(ListBox1.SelectedItem)
     End Sub
 End Class

@@ -117,4 +117,12 @@
 
     End Sub
 
+    Sub populateListBoxFromExcel()
+        Dim i As Integer
+        tblXl = wbXl.Sheets("Service").ListObjects("Persons")
+        For i = 1 To tblXl.databodyrange.rows.count
+            mainForm.ListBox1.Items.Add(tblXl.databodyrange.cells(i, 1).text)
+        Next i
+    End Sub
+
 End Module
