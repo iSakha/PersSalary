@@ -48,7 +48,7 @@ Partial Class mainForm
         Me.Label19 = New System.Windows.Forms.Label()
         Me.Label20 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.next2_btn = New System.Windows.Forms.Button()
         Me.subtractPers_btn = New System.Windows.Forms.Button()
         Me.addPers_btn = New System.Windows.Forms.Button()
         Me.ListBox2 = New System.Windows.Forms.ListBox()
@@ -72,11 +72,26 @@ Partial Class mainForm
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.ListBox4 = New System.Windows.Forms.ListBox()
+        Me.ListBox3 = New System.Windows.Forms.ListBox()
+        Me.startJobDTP = New System.Windows.Forms.DateTimePicker()
+        Me.endJobDTP = New System.Windows.Forms.DateTimePicker()
+        Me.startHoursUpDown = New System.Windows.Forms.NumericUpDown()
+        Me.endHoursUpDown = New System.Windows.Forms.NumericUpDown()
+        Me.startMinutesUpDown = New System.Windows.Forms.NumericUpDown()
+        Me.endMinutesUpDown = New System.Windows.Forms.NumericUpDown()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
+        Me.TabPage3.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
+        CType(Me.startHoursUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.endHoursUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.startMinutesUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.endMinutesUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -322,7 +337,7 @@ Partial Class mainForm
         '
         'TabPage2
         '
-        Me.TabPage2.Controls.Add(Me.Button1)
+        Me.TabPage2.Controls.Add(Me.next2_btn)
         Me.TabPage2.Controls.Add(Me.subtractPers_btn)
         Me.TabPage2.Controls.Add(Me.addPers_btn)
         Me.TabPage2.Controls.Add(Me.ListBox2)
@@ -335,14 +350,14 @@ Partial Class mainForm
         Me.TabPage2.Text = "Персонал"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
-        'Button1
+        'next2_btn
         '
-        Me.Button1.Location = New System.Drawing.Point(219, 561)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(156, 42)
-        Me.Button1.TabIndex = 27
-        Me.Button1.Text = "NEXT"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.next2_btn.Location = New System.Drawing.Point(219, 561)
+        Me.next2_btn.Name = "next2_btn"
+        Me.next2_btn.Size = New System.Drawing.Size(156, 42)
+        Me.next2_btn.TabIndex = 27
+        Me.next2_btn.Text = "NEXT"
+        Me.next2_btn.UseVisualStyleBackColor = True
         '
         'subtractPers_btn
         '
@@ -384,6 +399,16 @@ Partial Class mainForm
         '
         'TabPage3
         '
+        Me.TabPage3.Controls.Add(Me.Label9)
+        Me.TabPage3.Controls.Add(Me.Label8)
+        Me.TabPage3.Controls.Add(Me.endMinutesUpDown)
+        Me.TabPage3.Controls.Add(Me.startMinutesUpDown)
+        Me.TabPage3.Controls.Add(Me.endHoursUpDown)
+        Me.TabPage3.Controls.Add(Me.startHoursUpDown)
+        Me.TabPage3.Controls.Add(Me.endJobDTP)
+        Me.TabPage3.Controls.Add(Me.startJobDTP)
+        Me.TabPage3.Controls.Add(Me.ListBox4)
+        Me.TabPage3.Controls.Add(Me.ListBox3)
         Me.TabPage3.Location = New System.Drawing.Point(4, 22)
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
@@ -594,6 +619,94 @@ Partial Class mainForm
         Me.Label5.TabIndex = 0
         Me.Label5.Text = "Начало монтажа"
         '
+        'ListBox4
+        '
+        Me.ListBox4.FormattingEnabled = True
+        Me.ListBox4.Location = New System.Drawing.Point(435, 6)
+        Me.ListBox4.Name = "ListBox4"
+        Me.ListBox4.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple
+        Me.ListBox4.Size = New System.Drawing.Size(199, 589)
+        Me.ListBox4.Sorted = True
+        Me.ListBox4.TabIndex = 3
+        '
+        'ListBox3
+        '
+        Me.ListBox3.FormattingEnabled = True
+        Me.ListBox3.Location = New System.Drawing.Point(8, 6)
+        Me.ListBox3.Name = "ListBox3"
+        Me.ListBox3.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple
+        Me.ListBox3.Size = New System.Drawing.Size(199, 589)
+        Me.ListBox3.Sorted = True
+        Me.ListBox3.TabIndex = 2
+        '
+        'startJobDTP
+        '
+        Me.startJobDTP.Format = System.Windows.Forms.DateTimePickerFormat.Time
+        Me.startJobDTP.Location = New System.Drawing.Point(213, 44)
+        Me.startJobDTP.Name = "startJobDTP"
+        Me.startJobDTP.Size = New System.Drawing.Size(83, 20)
+        Me.startJobDTP.TabIndex = 4
+        '
+        'endJobDTP
+        '
+        Me.endJobDTP.Format = System.Windows.Forms.DateTimePickerFormat.Time
+        Me.endJobDTP.Location = New System.Drawing.Point(213, 96)
+        Me.endJobDTP.Name = "endJobDTP"
+        Me.endJobDTP.Size = New System.Drawing.Size(83, 20)
+        Me.endJobDTP.TabIndex = 5
+        '
+        'startHoursUpDown
+        '
+        Me.startHoursUpDown.Location = New System.Drawing.Point(302, 44)
+        Me.startHoursUpDown.Maximum = New Decimal(New Integer() {13, 0, 0, 0})
+        Me.startHoursUpDown.Name = "startHoursUpDown"
+        Me.startHoursUpDown.Size = New System.Drawing.Size(42, 20)
+        Me.startHoursUpDown.TabIndex = 6
+        '
+        'endHoursUpDown
+        '
+        Me.endHoursUpDown.Location = New System.Drawing.Point(302, 96)
+        Me.endHoursUpDown.Maximum = New Decimal(New Integer() {13, 0, 0, 0})
+        Me.endHoursUpDown.Name = "endHoursUpDown"
+        Me.endHoursUpDown.Size = New System.Drawing.Size(42, 20)
+        Me.endHoursUpDown.TabIndex = 7
+        '
+        'startMinutesUpDown
+        '
+        Me.startMinutesUpDown.Increment = New Decimal(New Integer() {15, 0, 0, 0})
+        Me.startMinutesUpDown.Location = New System.Drawing.Point(355, 44)
+        Me.startMinutesUpDown.Maximum = New Decimal(New Integer() {60, 0, 0, 0})
+        Me.startMinutesUpDown.Name = "startMinutesUpDown"
+        Me.startMinutesUpDown.Size = New System.Drawing.Size(42, 20)
+        Me.startMinutesUpDown.TabIndex = 8
+        '
+        'endMinutesUpDown
+        '
+        Me.endMinutesUpDown.Increment = New Decimal(New Integer() {15, 0, 0, 0})
+        Me.endMinutesUpDown.Location = New System.Drawing.Point(355, 96)
+        Me.endMinutesUpDown.Maximum = New Decimal(New Integer() {60, 0, 0, 0})
+        Me.endMinutesUpDown.Name = "endMinutesUpDown"
+        Me.endMinutesUpDown.Size = New System.Drawing.Size(42, 20)
+        Me.endMinutesUpDown.TabIndex = 9
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(213, 77)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(102, 13)
+        Me.Label8.TabIndex = 10
+        Me.Label8.Text = "Окончание работы"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(213, 28)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(84, 13)
+        Me.Label9.TabIndex = 11
+        Me.Label9.Text = "Начало работы"
+        '
         'mainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -608,10 +721,16 @@ Partial Class mainForm
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
         Me.TabPage2.ResumeLayout(False)
+        Me.TabPage3.ResumeLayout(False)
+        Me.TabPage3.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
+        CType(Me.startHoursUpDown, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.endHoursUpDown, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.startMinutesUpDown, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.endMinutesUpDown, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -663,7 +782,17 @@ Partial Class mainForm
     Friend WithEvents ListBox2 As ListBox
     Friend WithEvents ListBox1 As ListBox
     Friend WithEvents next1_btn As Button
-    Friend WithEvents Button1 As Button
+    Friend WithEvents next2_btn As Button
     Friend WithEvents subtractPers_btn As Button
     Friend WithEvents addPers_btn As Button
+    Friend WithEvents ListBox4 As ListBox
+    Friend WithEvents ListBox3 As ListBox
+    Friend WithEvents endJobDTP As DateTimePicker
+    Friend WithEvents startJobDTP As DateTimePicker
+    Friend WithEvents Label9 As Label
+    Friend WithEvents Label8 As Label
+    Friend WithEvents endMinutesUpDown As NumericUpDown
+    Friend WithEvents startMinutesUpDown As NumericUpDown
+    Friend WithEvents endHoursUpDown As NumericUpDown
+    Friend WithEvents startHoursUpDown As NumericUpDown
 End Class

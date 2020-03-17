@@ -91,8 +91,8 @@
         mainForm.startDTP.Value = Now()
         mainForm.eventDTP.Value = Now()
         mainForm.endDTP.Value = Now()
-        mainForm.daysQty_txt.Text = ""
-        mainForm.persQty_txt.Text = ""
+        mainForm.daysQty_txt.Text = "0"
+        mainForm.persQty_txt.Text = "0"
 
     End Sub
 
@@ -117,7 +117,7 @@
 
     End Sub
 
-    Sub populateListBoxFromExcel()
+    Sub populateListBoxFromExcel()          ' with persons
         Dim i As Integer
         tblXl = wbXl.Sheets("Service").ListObjects("Persons")
         For i = 1 To tblXl.databodyrange.rows.count
